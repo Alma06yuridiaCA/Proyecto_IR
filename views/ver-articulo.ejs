@@ -1,0 +1,60 @@
+<main class="contenedor panel-administracion">
+    <h1 class="text-center"><%= nombrePagina %></h1>
+    <h2 class="text-center mx-auto">
+        <div class="nav">
+          
+                <a href="/nuevo-articulo" class="btn btn-success" style="float: right;">Agregar nuevo ártículo</a>   
+                  
+            
+        </div>
+    </h2>
+
+    <div class="container">
+        
+        <div class="d-flex justify-content-center">
+            
+            <table class="table table-striped">
+                
+                <thead>
+                    <tr>
+                        <th scope="col"  class="text-center">Descripción</th>
+                        <th scope="col"  class="text-center">Unidades</th> 
+                        <th scope="col"  class="text-center">Precio</th>   
+
+                        <th scope="col"  class="text-center">Editar</th>
+                        <th scope="col"  class="text-center">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(articulo) { %>
+                        <% articulo.forEach(articulo => { %>
+                            <tr>
+                                <td class="text-center"><%= articulo.descripcion %></td>
+                                <td class="text-center"><%= articulo.unidades %></td>
+                                <td class="text-center"><%= articulo.precio %></td>
+
+                                <td class="text-center">
+                                    <a href="/editar-articulo/<%= articulo.id %>" class="btn btn-link" ><i class="fas fa-pencil-alt"> </i>Editar</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="/eliminar-articulo/<%= articulo.id %>" class="btn btn-link text-danger"><i class="fas fa-trash-alt"> </i>Eliminar</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="4">Sin registros</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <a href="/administracion" class="btn btn-secondary float-right">Regresar</a>
+    </div>
+
+   
+    
+</main>
+
+

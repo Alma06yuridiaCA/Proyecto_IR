@@ -1,0 +1,27 @@
+<main class= "contenedor contenedor-formularios">
+    <h1><%= nombrePagina %> </h1>
+    
+    <form action="/nuevo-articulo" method="POST" class="default-form">
+       
+        <div class="campo">
+            <label> Descripción: </label>
+            <input type="text" name="descripcion" placeholder="Descripción">
+        </div>
+        
+        <div class="campo">
+            <label>Unidades </label>
+            <input type="text" name="unidades" placeholder="Unidades disponibles">
+        </div>
+
+        <div class="campo">
+            <label>Precio </label>
+            <input type="text" name="precio" placeholder="Precio">
+        </div>
+       
+       
+     
+        <div class="campo enviar">
+            <input type="submit" class="btn btn-verde" value="Agregar">
+        </div>
+    </form>
+</main>

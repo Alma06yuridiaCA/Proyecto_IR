@@ -1,0 +1,17 @@
+<main class= "contenedor contenedor-formularios">
+    <h1>Asignatura<%= asignaturaIdA %> </h1>
+    
+    <form action="/crear-grupo" method="POST" class="default-form">
+       
+        <div class="campo">
+            <label>Grupo: </label>
+            <input type="text" name="nombreGrupo" placeholder="Nombre">
+        </div>
+         <input type="hidden" name="asignaturaId" value="<%= asignaturaId %>">
+      
+     
+        <div class="campo enviar">
+            <input type="submit" class="btn btn-verde" value="Crear grupo">
+        </div>
+    </form>
+</main>
